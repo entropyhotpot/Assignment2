@@ -1,5 +1,7 @@
 package com.example.assignment2.Network
 
+import com.example.assignment2.data.ResponseItem
+import com.example.assignment2.data.authRequest
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Path
