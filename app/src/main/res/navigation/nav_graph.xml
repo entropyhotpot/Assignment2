@@ -19,6 +19,9 @@
         android:name="com.example.assignment2.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" >
+        <argument
+            android:name="detail"
+            app:argType="com.example.assignment2.home.data.ResponseItem" />
         <action
             android:id="@+id/action_dashboardFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
