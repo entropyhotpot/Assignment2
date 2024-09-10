@@ -30,6 +30,6 @@
         android:id="@+id/dashboardRecyclerView"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="" />
+        tools:listitem="@layout/item_layout_api" />
 
 </LinearLayout>
