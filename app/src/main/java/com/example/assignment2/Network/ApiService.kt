@@ -1,5 +1,6 @@
 package com.example.assignment2.Network
 
+import com.example.assignment2.data.ApiResponse
 import com.example.assignment2.data.ResponseItem
 import com.example.assignment2.data.authRequest
 import com.example.assignment2.data.authResponse
@@ -16,6 +17,6 @@ interface ApiService {
 
     // Request to grab all items
     @GET("dashboard/{topic}")
-    suspend fun getAllItems(@Path("topic") topic: String): List<ResponseItem>
+    suspend fun getAllItems(@Path("topic") topic: String): ApiResponse
 
 }

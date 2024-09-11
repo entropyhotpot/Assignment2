@@ -16,7 +16,7 @@ class DashboardViewModel: ViewModel() {
 
         viewModelScope.launch {
             val result = apiService.getAllItems("travel")
-            apiResponseObjects.value = result
+            apiResponseObjects.value = result.entities
         }
     }
 }

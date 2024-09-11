@@ -30,6 +30,6 @@
         tools:layout="@layout/fragment_details">
         <argument
             android:name="detail"
-            app:argType="com.example.assignment2.home.data.ResponseItem" />
+            app:argType="com.example.assignment2.data.ResponseItem" />
     </fragment>
 </navigation>
