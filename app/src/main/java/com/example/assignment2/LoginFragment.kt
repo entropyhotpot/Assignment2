@@ -6,29 +6,53 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.example.assignment2.databinding.FragmentLoginBinding
+import com.example.assignment2.ui.LoginViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 
 class LoginFragment : Fragment() {
 
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
+    private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val loginButton:Button = view.findViewById(R.id.loginButton)
+        binding.loginButton.setOnClickListener {
+            val username = binding.loginUsername.editText?.text.toString()
+            val password = binding.loginPassword.editText?.text.toString()
 
-        loginButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+            loginViewModel.login(username, password)
         }
+
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                loginViewModel.loginResponse.collect { response ->
+                    if (response != null) {
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToDashboardFragment(login = response))
+                    }
+                }
+            }
+        }
+
 
     }
 

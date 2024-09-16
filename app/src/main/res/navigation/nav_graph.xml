@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <argument
+            android:name="login"
+            app:argType="com.example.assignment2.data.authResponse" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
