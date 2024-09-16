@@ -10,8 +10,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment2.data.ResponseItem
+import com.example.assignment2.data.authResponse
 import com.example.assignment2.recyclerview.MyRecyclerViewAdapter
 import com.example.assignment2.ui.DashboardViewModel
 import kotlinx.coroutines.flow.collect
@@ -24,6 +26,8 @@ class DashboardFragment : Fragment() {
     private lateinit var navigationFunctionLambda: (ResponseItem) -> Unit
     private lateinit var recyclerViewAdapter: MyRecyclerViewAdapter
 
+    private val args: DashboardFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +38,9 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val loginResponse: authResponse = args.login
+        viewModel.setAuthResponse(loginResponse)
 
         navigationFunctionLambda = {
             findNavController()
