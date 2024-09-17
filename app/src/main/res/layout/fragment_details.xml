@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/regularPadding"
+    android:paddingEnd="@dimen/regularPadding"
+    android:paddingTop="@dimen/regularPadding"
+    android:paddingBottom="0dp"
+    android:background="@drawable/gradient_background"
     tools:context=".DetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailsHeader"
+        android:text="@string/detailsHeader"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:padding="@dimen/regularPadding"
+        android:background="@drawable/edittext_border"
+        android:backgroundTint="@color/white">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/detailsImage"
+            android:contentDescription="@string/detailsImageContentDesc"
+            android:src="@drawable/placeholder"
+            android:padding="@dimen/default_inner_top_padding"
+
+
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailsDestination"
+            android:text="@string/detailsDestination"
+            android:paddingTop="@dimen/textPadding"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailsCountry"
+            android:text="@string/detailsCountry"
+            android:paddingTop="@dimen/textPadding"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailsBestSeason"
+            android:text="@string/detailsBestSeason"
+            android:paddingTop="@dimen/textPadding" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailsPopularAttraction"
+            android:text="@string/detailsPopularAttraction"
+            android:paddingTop="@dimen/textPadding" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailsDescription"
+            android:text="@string/detailsDescription"
+            android:paddingTop="@dimen/textPadding" />
+
+
+    </LinearLayout>
+</LinearLayout>

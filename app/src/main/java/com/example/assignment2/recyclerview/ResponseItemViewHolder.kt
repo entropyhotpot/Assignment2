@@ -16,10 +16,10 @@ class ResponseItemViewHolder(view: View, private val navigationFunction: (Respon
     private val button: Button = view.findViewById(R.id.navigationButton)
 
     fun bind(item: ResponseItem) {
-        destination.text = item.destination
-        country.text = item.country
-        bestSeason.text = item.bestSeason
-        popularAttraction.text = item.popularAttraction
+        destination.text = "Destination: ${item.destination}"
+        country.text = "Country: ${item.country}"
+        bestSeason.text = "Best Season: ${item.bestSeason}"
+        popularAttraction.text = "Popular Attraction: ${item.popularAttraction}"
 
         button.setOnClickListener {
             navigationFunction(item)

@@ -8,4 +8,11 @@
     <string name="loginButton">Login</string>
     <string name="dashboardWelcome">Dashboard</string>
     <string name="itemButtonText">See Details</string>
+    <string name="detailsHeader">Details</string>
+    <string name="detailsImageContentDesc">Placeholder Image</string>
+    <string name="detailsCountry">Country</string>
+    <string name="detailsBestSeason">Best Season</string>
+    <string name="detailsPopularAttraction">Popular Attraction</string>
+    <string name="detailsDescription">Description</string>
+    <string name="detailsDestination">Destination</string>
 </resources>

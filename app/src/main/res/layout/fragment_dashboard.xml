@@ -9,7 +9,7 @@
     android:paddingEnd="@dimen/regularPadding"
     android:paddingTop="@dimen/regularPadding"
     android:paddingBottom="0dp"
-    android:background="@color/teal"
+    android:background="@drawable/gradient_background"
     tools:context=".DashboardFragment">
 
     <com.google.android.material.textview.MaterialTextView
