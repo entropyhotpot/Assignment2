@@ -85,6 +85,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3") // AndroidX JUnit for instrumented tests
 
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
