@@ -9,8 +9,9 @@ import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.assignment2.ui.DetailsViewModel
-import com.example.assignment2.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
     private val detailsViewModel: DetailsViewModel by viewModels()

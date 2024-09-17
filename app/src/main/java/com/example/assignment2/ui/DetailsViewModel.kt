@@ -1,8 +1,6 @@
 package com.example.assignment2.ui
 
-import android.widget.TextView
 import androidx.lifecycle.ViewModel
-import com.example.assignment2.R
 import com.example.assignment2.data.ResponseItem
 import kotlinx.coroutines.flow.MutableStateFlow
 

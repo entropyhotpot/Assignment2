@@ -16,9 +16,11 @@ import com.example.assignment2.data.ResponseItem
 import com.example.assignment2.data.authResponse
 import com.example.assignment2.recyclerview.MyRecyclerViewAdapter
 import com.example.assignment2.ui.DashboardViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class DashboardFragment : Fragment() {
 
 
