@@ -12,7 +12,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor(private val repository: ApiRepository): ViewModel() {
+class DashboardViewModel @Inject constructor(
+    private val repository: ApiRepository): ViewModel() {
 
     val apiResponseObjects = MutableStateFlow<List<ResponseItem>>(listOf())
     private lateinit var authResponse: authResponse
