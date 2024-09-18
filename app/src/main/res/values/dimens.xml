@@ -3,4 +3,5 @@
     <dimen name="default_inner_top_padding">16dp</dimen>
     <dimen name="regularPadding">16dp</dimen>
     <dimen name="textPadding">8dp</dimen>
+    <dimen name="cardTextPadding">4dp</dimen>
 </resources>

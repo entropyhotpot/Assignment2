@@ -13,11 +13,11 @@ class DetailsViewModel: ViewModel() {
     val descriptionText = MutableStateFlow("")
 
     fun bind(item: ResponseItem) {
-        destinationText.value = item.destination
-        countryText.value = item.country
-        bestSeasonText.value = item.bestSeason
-        popularAttractionText.value = item.popularAttraction
-        descriptionText.value = item.description
+        destinationText.value = "Destination: ${item.destination}"
+        countryText.value = "Country: ${item.country}"
+        bestSeasonText.value = "Best Season: ${item.bestSeason}"
+        popularAttractionText.value = "Popular Attraction: ${item.popularAttraction}"
+        descriptionText.value = "Description: ${item.description}"
     }
 
 }

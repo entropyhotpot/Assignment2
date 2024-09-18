@@ -18,6 +18,7 @@
         android:id="@+id/loginWelcomeText"
         android:text="@string/loginWelcome"
         android:textSize="32sp"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"/>
 

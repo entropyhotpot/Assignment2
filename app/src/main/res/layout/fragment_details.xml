@@ -17,6 +17,7 @@
         android:id="@+id/detailsHeader"
         android:text="@string/detailsHeader"
         android:textSize="32sp"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"/>
 
