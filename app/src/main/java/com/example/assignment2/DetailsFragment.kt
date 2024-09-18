@@ -17,10 +17,6 @@ class DetailsFragment : Fragment() {
     private val detailsViewModel: DetailsViewModel by viewModels()
     private val args: DetailsFragmentArgs by navArgs()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,9 +29,11 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Get the response item from the arguments
         val responseItem = args.detail
         detailsViewModel.bind(responseItem)
 
+        // Set the text views
         view.findViewById<TextView>(R.id.detailsDestination).text = detailsViewModel.destinationText.value
         view.findViewById<TextView>(R.id.detailsCountry).text = detailsViewModel.countryText.value
         view.findViewById<TextView>(R.id.detailsBestSeason).text = detailsViewModel.bestSeasonText.value

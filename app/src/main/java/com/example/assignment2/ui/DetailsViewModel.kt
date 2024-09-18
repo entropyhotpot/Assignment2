@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 class DetailsViewModel: ViewModel() {
 
+    // Initialize MutableStateFlow for each field in the DetailsFragment
     val destinationText = MutableStateFlow("")
     val countryText = MutableStateFlow("")
     val bestSeasonText = MutableStateFlow("")

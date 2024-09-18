@@ -44,11 +44,13 @@ class DashboardFragment : Fragment() {
         val loginResponse: authResponse = args.login
         viewModel.setAuthResponse(loginResponse)
 
+        // Lambda function to navigate to DetailsFragment
         navigationFunctionLambda = {
             findNavController()
                 .navigate(DashboardFragmentDirections.actionDashboardFragmentToDetailsFragment(detail = it))
         }
 
+        // Set up the RecyclerView
         recyclerViewAdapter = MyRecyclerViewAdapter(navigationFunction = navigationFunctionLambda)
 
         lifecycleScope.launch {

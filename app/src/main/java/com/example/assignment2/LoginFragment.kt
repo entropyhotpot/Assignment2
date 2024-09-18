@@ -19,9 +19,14 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
+    // initialize the binding variable
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    // initialize the view model
     private val loginViewModel: LoginViewModel by viewModels()
+
+    // initialize the snackbar
     private var snackbar: Snackbar? = null
 
     override fun onCreateView(
@@ -38,9 +43,11 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.loginButton.setOnClickListener {
+            // Get the username and password from the edit text fields
             val username = binding.loginUsername.editText?.text.toString()
             val password = binding.loginPassword.editText?.text.toString()
 
+            // Dismiss the snackbar if it is showing
             snackbar?.dismiss()
             loginViewModel.login(username, password)
         }
@@ -49,7 +56,7 @@ class LoginFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     loginViewModel.loginResponse.collect { response ->
-                        if (response != null && !loginViewModel.hasNavigatedToDashboard) {
+                        if (response != null && !loginViewModel.hasNavigatedToDashboard) { // Navigate to the dashboard
                             loginViewModel.hasNavigatedToDashboard = true
                             findNavController().navigate(
                                 LoginFragmentDirections.actionLoginFragmentToDashboardFragment(
@@ -61,7 +68,7 @@ class LoginFragment : Fragment() {
                 }
                 launch {
                     loginViewModel.error.collect { error ->
-                        if (error != null) {
+                        if (error != null) { // Show the error message
                             snackbar = Snackbar.make(binding.root, "Error: $error", Snackbar.LENGTH_LONG)
                             snackbar?.show()
                         }
@@ -75,6 +82,7 @@ class LoginFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        // Reset the navigation state
         loginViewModel.hasNavigatedToDashboard = false
     }
 
